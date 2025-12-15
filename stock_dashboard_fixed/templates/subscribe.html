@@ -1,0 +1,8 @@
+<html><head><link rel="stylesheet" href="/static/styles.css"></head>
+<body><div class="container"><h2>Select Stocks</h2>
+<form method="post">
+{% for s in stocks %}
+<label class="checkbox"><input type="checkbox" name="stocks" value="{{s}}"> {{s}}</label>
+{% endfor %}
+<button>Go to Dashboard</button></form>
+<a href="/logout" class="logout">Logout</a></div></body></html>

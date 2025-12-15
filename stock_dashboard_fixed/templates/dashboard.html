@@ -1,0 +1,16 @@
+
+<html>
+<head>
+<link rel="stylesheet" href="/static/styles.css">
+<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+<script src="/static/dashboard.js"></script>
+</head>
+<body>
+<div class="topbar"><h2>Welcome {{email}}</h2><a href="/logout" class="logout">Logout</a></div>
+<div id="stockGrid" class="grid">
+{% for s in subscribed %}
+<div class="stock-card" id="{{s}}"><h3>{{s}}</h3><p class="price">Loading...</p></div>
+{% endfor %}
+</div>
+<script>initializeDashboard({{subscribed|tojson}});</script>
+</body></html>
